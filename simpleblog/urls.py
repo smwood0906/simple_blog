@@ -21,5 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='home')
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^$', views.home, name='home'),
+    url(r'^blog/(?P<slug>[-\w]+)/?$', views.blog, name='blog')
+]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
