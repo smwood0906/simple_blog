@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url(r'^blog/(?P<slug>[-\w]+)/?$', views.blog, name='blog')
+    url(r'^blog/(?P<cat>[-\w]+)/(?P<slug>[-\w]+)/?$', views.blog, name='blog'),
+    url(r'^blog/(?P<cat>[-\w]+)?$', views.cat)
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

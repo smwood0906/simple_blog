@@ -7,7 +7,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 {% for posts in post %}
                     <div class="post-preview">
-                        <a href="/blog/{{ posts.slug }}">
+                        <a href="/blog/{{ posts.category.slug }}/{{ posts.slug }}">
                             <h2 class="post-title">
                                 {{ posts.title }}
                             </h2>
